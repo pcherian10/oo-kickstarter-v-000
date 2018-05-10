@@ -4,13 +4,12 @@ class Backer
 
   def initialize (name)
     @name = name
-    @backers = []
+    @backed_projects = []
   end
 
-  def add_backer (backer)
-    @backers << backer if !@backers.include?(backer)
-    backer.back_project(self)
-
+  def back_projet (project)
+    @backed_projects << project if !@backed_projects.include?(project)
+    project.add_backer(self)
   end
 
 end
